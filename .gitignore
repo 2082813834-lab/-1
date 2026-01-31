@@ -1,0 +1,16 @@
+/build/
+/CMakeFiles/
+/CMakeCache.txt
+Makefile
+cmake_install.cmake
+*.exe
+*.dll
+*.so
+*.dylib
+*.o
+*.obj
+.vscode/
+*.vcxproj*
+*.sln
+.DS_Store
+Thumbs.db
