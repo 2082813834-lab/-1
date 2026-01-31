@@ -1,0 +1,40 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "CMake: Configure",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "-S",
+        "${workspaceFolder}",
+        "-B",
+        "${workspaceFolder}/build",
+        "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
+      ],
+      "presentation": { "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
+    },
+    {
+      "label": "CMake: Build",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--build",
+        "${workspaceFolder}/build",
+        "--config",
+        "Debug"
+      ],
+      "group": { "kind": "build", "isDefault": true },
+      "dependsOn": "CMake: Configure",
+      "presentation": { "reveal": "always", "panel": "shared" },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Run my_app",
+      "type": "shell",
+      "command": "${workspaceFolder}/build/my_app.exe",
+      "problemMatcher": []
+    }
+  ]
+}
